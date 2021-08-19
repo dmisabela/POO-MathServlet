@@ -16,9 +16,22 @@ and open the template in the editor.
             <hr/>
             <h1>JavaEE</h1>
             <h2>Servlets</h2>
-            
-            <h4><a href="isabela-servlet.html" >IsabelaServlet</a></h4>
-            <h4><a href="math-servlet.html" >MathServlet</a></h4>
+            <hr/>
+            <h3><a href="isabela-servlet.html">IsabelaServlet</a></h3>
+            <hr/>
+            <h3>MathServlet</h3>
+            <form action ="math-servlet.html">    
+            <input type="number" name="n1" value="1"/> 
+            <select name="op">
+                <option value="Soma">+</option>
+                <option value="Subtracao">-</option>
+                <option value="Multiplicacao">*</option>
+                <option value="Divisao">/</option>
+            </select>
+            <input type="number" name="n2" value="1"/>
+            <input type="submit" value="Calcular"/>            
+        </form>
+            <hr/>
         </div>         
     </body>
 </html>

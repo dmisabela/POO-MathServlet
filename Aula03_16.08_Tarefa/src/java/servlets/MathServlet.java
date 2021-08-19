@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author isabe
+ * @author isabela
  */
 @WebServlet(name = "MathServlet", urlPatterns = {"/math-servlet.html"})
 public class MathServlet extends HttpServlet {
@@ -34,13 +34,48 @@ public class MathServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
+             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MathServlet</title>");            
+            out.println("<title>IsabelaServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet MathServlet at " + request.getContextPath() + "</h1>");
+            out.println("<div style='text-align:center'>");
+            out.println("<h2>Resultado</h2>");
+            
+            try {
+                   float n1 = Float.parseFloat(request.getParameter("n1"));
+                   out.println("<h4><b>N1</b>: " + n1 + "</h4>");
+                   float n2 = Float.parseFloat(request.getParameter("n2"));
+                   out.println("<h4><b>N2</b>: " + n2 + "</h4>");
+                   out.println("<br/>");
+                   
+                   float result = 0;
+                   String op = request.getParameter("op");                   
+                   
+                   switch (op) {
+
+                    case "Soma":
+                        result = n1 + n2; break;
+                    case "Subtracao":
+                        result = n1 - n2; break;
+                    case "Divisao":                        
+                        result = n1 / n2; break;
+                    case "Multiplicacao":
+                        result = n1 * n2; break;
+                    default: System.out.println("Operação inválida.");
+                }                   
+                   out.println("<h4><b>" + op + "</b>: " + result + "</h4>");                               
+                    }            
+                catch (Exception ex) { 
+                      out.println("<p style = 'color:red'>"+ex.getMessage()+"</p>");
+                }
+            
+            
+            out.println("</br>");
+            out.println("</br>");
+            out.println("<h3><a href ='index.html'>Voltar</a></h3>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }
