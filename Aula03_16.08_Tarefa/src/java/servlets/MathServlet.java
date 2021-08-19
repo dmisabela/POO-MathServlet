@@ -63,10 +63,11 @@ public class MathServlet extends HttpServlet {
                         result = n1 / n2; break;
                     case "Multiplicacao":
                         result = n1 * n2; break;
-                    default: System.out.println("Operação inválida.");
+                    default: out.println("<h4 style = 'color:red'>Operação inválida.</h4>");
                 }                   
                    out.println("<h4><b>" + op + "</b>: " + result + "</h4>");                               
-                    }            
+                    
+            }            
                 catch (Exception ex) { 
                       out.println("<p style = 'color:red'>"+ex.getMessage()+"</p>");
                 }
