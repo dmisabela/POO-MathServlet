@@ -37,7 +37,7 @@ public class MathServlet extends HttpServlet {
              out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>IsabelaServlet</title>");            
+            out.println("<title>MathServlet</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<div style='text-align:center'>");
